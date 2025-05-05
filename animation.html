@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <button> click me </button>
+    <br>
+    <br>
+    <div class="box">
+
+    </div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+    
+        $(document).ready(function () {
+
+            // $('.box').hide()
+            // $('button').click(function(){
+            //     $('.box').animate({
+            //     width: '200px',
+            //     height: '200px',
+            //     backgroundColor:'red',
+            //     opacity: 1
+            //      }, 1000);
+
+            //     $(".box").queue(function(){
+            //         $(".box").css({background:"red"})
+            //         $(".box").dequeue()
+            //     })
+
+            //     $('.box').animate({
+            //     width: '100px',
+            //     height: '100px',
+            //     opacity: 1
+            //      }, 1000);
+
+            //      $(".box").queue(function(){
+            //         $(".box").css({background:"green"})
+            //         $(".box").dequeue()
+            //     })
+            // })
+
+            // $('button').click(function(){
+            //     $('.box').fadeToggle()
+            //     // $('.box').fadeIn()
+            //     // $('.box').fadeOut()
+            //     $('.box').fadeTo(1000,0.5)
+            // })
+
+            $('button').click(function(){
+                // $('.box').hide()
+                // $('.box').show()
+                $('.box').toggle()
+            })
+        })
+    </script>
+</body>
+
+</html>
