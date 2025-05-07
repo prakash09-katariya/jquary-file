@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo {
+            color: red;
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        .ok {
+            font-size: 10px;
+        }
+
+        title[de] {
+            font-size: 100px;
+        }
+        #name{
+            width: 200px;
+            height: 50px;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="demo" title="de">hello google</h1>
+
+    <input type="text" id="name" value="Hello" disabled>
+    <button id="enableBtn">Enable Input</button>
+
+    <button>click me</button>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            // $('button').click(function(){
+            //     $('h1').removeClass()
+            // })
+
+            // $('button').click(function(){
+            //     $('h1').addClass('ok')
+            // })
+
+            // $('button').click(function(){
+            //     $('h1').toggleClass()
+            // })
+
+            // $('button').click(function(){
+            //     $('h1').css('background','green','color','white',)
+            //     $('h1').css('color','white',)
+            // })
+
+            // $('button').click(function(){
+            //     $('h1').remove()
+            // })
+
+            // $('button').click(function(){
+            //     $('h1').empty()
+            // })
+
+            // $('#enableBtn').click(function () {
+            //     $('input').removeAttr('id');
+            // });
+
+            // $('button').click(function(){
+            //     $('input').innerWidth(console.log)
+
+            // })
+            // $('button').click(function(){
+            //     $('input').outerWidth(console.log)
+            // })
+
+            // $('button').click(function(){
+            //     $('input').height(console.log)
+            // })
+
+            $('button').click(function(){
+                $('input').innerHeight(console.log)
+            })
+        })
+    </script>
+</body>
+
+</html>
