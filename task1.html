@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        ul li {
+            text-decoration: none;
+            list-style: none;
+            padding: 10px 20px;
+            border: 1px solid black;
+            background-color: aqua;
+            cursor: pointer;
+        }
+
+        ul li:focus {
+            background-color: blueviolet;
+            color: white;
+        }
+
+        #gallery {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .item {
+            width: 33%;
+            border: 1px solid black;
+            transition: transform 0.3s ease;
+        }
+
+        .item img {
+            width: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li data-filter="*">gallery-1</li>
+        <li data-filter=".transition">gallery-2</li>
+        <li data-filter=".numberGreaterThan50">gallery-3</li>
+    </ul>
+
+    <div id="gallery">
+        <div class="item city">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Kremlevskaya_Naberezhnaja_Moscow.hires.jpg"
+                alt="">
+        </div>
+        <div class="item alkali, .alkaline-earth">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Kremlevskaya_Naberezhnaja_Moscow.hires.jpg"
+                alt="">
+        </div>
+        <div class="item transition">
+            <img src="https://www.brodyaga.ru/pages/photos/Russia2/Moscow%20Russia%201686549224(www.brodyaga.com).jpg"
+                alt="">
+        </div>
+        <div class="item numberGreaterThan50">
+            <img src="https://pastvu.com/_p/a/v/p/6/vp6hxrp45lf2hpuf1s.jpg" alt="">
+        </div>
+        <div class="item numberGreaterThan50">
+            <img src="https://avatars.mds.yandex.net/i?id=b78808888579e5d1e0b67e2289ac70c75da3c116-11444350-images-thumbs&n=13"
+                alt="">
+        </div>
+    </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"
+        integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

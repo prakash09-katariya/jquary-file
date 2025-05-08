@@ -1,0 +1,19 @@
+
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .item {
+    width: 30%;
+    transition: transform 0.3s ease;
+  }
+  
+  .item img {
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  
