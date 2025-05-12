@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: auto;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        li {
+            list-style: none;
+            background-color: aquamarine;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .main-row {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            width: 100%;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .item {
+            width: calc(33% - 14px);
+        }
+
+        .item img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .container {
+            width: 1140px;
+            margin: 0 auto;
+        }
+
+        .w-100 {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w-100">
+        <div class="container">
+            <ul>
+                <li class="button is-checked" data-filter="*">button.1</li>
+                <li class="button" data-filter=".metal">button.2</li>
+                <li class="button" data-filter=".transition">button.3</li>
+                <li class="button" data-filter=".alkali, .alkaline-earth">button.4</li>
+            </ul>
+            <div class="main-row">
+                <div class="item metal">
+                    <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740"
+                        alt="">
+                </div>
+                <div class="item metal">
+                    <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740"
+                        alt="">
+                </div>
+                <div class="item transition">
+                    <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740"
+                        alt="">
+                </div>
+                <div class="item transition">
+                    <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740"
+                        alt="">
+                </div>
+                <div class="item alkali">
+                    <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740"
+                        alt="">
+                </div>
+                <div class="item alkali">
+                    <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740"
+                        alt="">
+                </div>
+                <div class="item alkaline-earth">
+                    <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740"
+                        alt="">
+                </div>
+                <div class="item alkaline-earth">
+                    <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740"
+                        alt="">
+                </div>
+                <div class="item alkaline-earth">
+                    <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    var $grid = $('.grid').isotope({
+  itemSelector: '.item',
+  layoutMode: 'fitRows'
+});
+// filter functions
+var filterFns = {
+  // show if number is greater than 50
+  numberGreaterThan50: function() {
+    var number = $(this).find('.number').text();
+    return parseInt( number, 10 ) > 50;
+  },
+  // show if name ends with -ium
+  ium: function() {
+    var name = $(this).find('.name').text();
+    return name.match( /ium$/ );
+  }
+};
+// bind filter button click
+$('.filters-button-group').on( 'click', 'button', function() {
+  var filterValue = $( this ).attr('data-filter');
+  // use filterFn if matches value
+  filterValue = filterFns[ filterValue ] || filterValue;
+  $grid.isotope({ filter: filterValue });
+});
+// change is-checked class on buttons
+$('.button-group').each( function( i, buttonGroup ) {
+  var $buttonGroup = $( buttonGroup );
+  $buttonGroup.on( 'click', 'button', function() {
+    $buttonGroup.find('.is-checked').removeClass('is-checked');
+    $( this ).addClass('is-checked');
+  });
+});
+
+</script>
+</body>
+
+</html>

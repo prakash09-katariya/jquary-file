@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css"
+          />
+    <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.autoplay.css"
+          />
+    <style>
+      #myCarousel {
+        --f-carousel-spacing: 10px;
+        --f-carousel-slide-width: 100%;
+        --f-progress-color: #ff3520;
+      }
+
+      #myCarousel .f-carousel__slide {
+        padding: 50px;
+        background: #eee;
+      }
+      .f-carousel__slide img{
+        object-fit: cover;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="f-carousel" id="myCarousel">
+        <div class="f-carousel__slide">
+            <img src="https://img.freepik.com/free-photo/cascade-boat-clean-china-natural-rural_1417-1356.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740" alt="">
+        </div>
+        <div class="f-carousel__slide">
+            <img src="https://img.freepik.com/free-photo/beautiful-strawberry-garden-sunrise-doi-ang-khang-chiang-mai-thailand_335224-762.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740" alt="">
+        </div>
+        <div class="f-carousel__slide">
+            <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740" alt="">
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.autoplay.umd.js"></script>
+    <script>
+      new Carousel(document.getElementById("myCarousel"), {
+        Autoplay : {
+          timeout : 2000
+        }
+      }, {
+        Autoplay
+      });
+    </script>
+  </body>
+</html>

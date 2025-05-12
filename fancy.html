@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        body {
+  background: #12c2e9;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.custom-ui-container {
+	max-width:400px;
+  width: 400px;
+	height:250px;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+  background: #fff;
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  -webkit-box-shadow: 0px 6px 2px rgba(0, 0, 0, 0.16), 0px 6px 2px rgba(0, 0, 0, 1);
+    box-shadow: 0px 6px 2px rgba(0, 0, 0, 0.16), 0px 6px 2px rgba(0, 0, 0, 0.23);
+  border-radius: 10px;
+}
+
+
+.custom-ui-container img {
+position: relative;
+  left: 40%;
+}
+
+h3 {
+    font-family: 'Cookie', sans-serif;
+    color: black;
+    margin-bottom: 3%;
+    font-size: 40px;
+  text-align: center;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+    </style>
+
+    <div class="custom-ui-container">
+  <h3>Fancybox Gallery</h3>
+  <p> Click on the following image to open the gallery </p>
+  <a class="open_fancybox" href="http://fancyapps.com/fancybox/demo/1_b.jpg"><img  src="https://img.icons8.com/nolan/80/000000/stack-of-photos.png"></a>
+</div>
+
+
+
+<script>
+    jQuery(document).ready(function () {
+    $(".open_fancybox").click(function () {
+        $.fancybox.open([{
+            href: 'http://hotter.rs/uploads/59aa76ffbd225952d028161c1e506698IMG_5461.PNG',
+            title: '1st title'
+        }, {
+            href: 'http://fancyapps.com/fancybox/demo/2_b.jpg',
+            title: '2nd title'
+        }, {
+            href: 'http://fancyapps.com/fancybox/demo/3_b.jpg',
+            title: '3rd title'
+        }], {
+            padding: 0
+        });
+        return false;
+    });
+});
+</script>
+</body>
+</html>
