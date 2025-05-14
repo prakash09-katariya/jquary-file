@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Isotope - filtering</h1>
+
+<div class="button-group filters-button-group">
+  <button class="button is-checked" data-filter="*">show all</button>
+  <button class="button" data-filter=".metal">metal</button>
+  <button class="button" data-filter=".transition">transition</button>
+  <button class="button" data-filter=".alkali, .alkaline-earth">alkali and alkaline-earth</button>
+  <button class="button" data-filter=":not(.transition)">not transition</button>
+  <button class="button" data-filter=".metal:not(.transition)">metal but not transition</button>
+  <button class="button" data-filter="numberGreaterThan50">number > 50</button>
+  <button class="button" data-filter="ium">name ends with &ndash;ium</button>
+</div>
+
+<div class="grid">
+  <div class="element-item transition metal " data-category="transition">
+ <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740" alt="">
+  </div>
+  <div class="element-item metalloid " data-category="metalloid">
+    <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740" alt="">
+  </div>
+  <div class="element-item post-transition metal " data-category="post-transition">
+    <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740" alt="">
+  </div>
+  <div class="element-item post-transition metal " data-category="post-transition">
+    <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740" alt="">
+  </div>
+  <div class="element-item transition metal " data-category="transition">
+    <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740" alt="">
+  </div>
+  <div class="element-item alkali metal " data-category="alkali">
+    <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740" alt="">
+  </div>
+  <div class="element-item alkali metal " data-category="alkali">
+    <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740" alt="">
+  </div>
+  <div class="element-item transition metal " data-category="transition">
+    <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740" alt="">
+  </div>
+  <div class="element-item alkaline-earth metal " data-category="alkaline-earth">
+   <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740" alt="">
+  </div>
+  <div class="element-item transition metal " data-category="transition">
+    <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740" alt="">
+  </div>
+  <div class="element-item post-transition metal " data-category="post-transition">
+ <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740" alt="">
+  </div>
+  <div class="element-item metalloid " data-category="metalloid">
+  <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740" alt="">
+  </div>
+  <div class="element-item transition metal " data-category="transition">
+    <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740" alt="">
+  </div>
+  <div class="element-item lanthanoid metal inner-transition " data-category="lanthanoid">
+    <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740" alt="">
+  </div>
+  <div class="element-item noble-gas nonmetal " data-category="noble-gas">
+   <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740" alt="">
+  </div>
+  <div class="element-item diatomic nonmetal " data-category="diatomic">
+    <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740" alt="">
+  </div>
+  <div class="element-item actinoid metal inner-transition " data-category="actinoid">
+   <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740" alt="">
+  </div>
+  <div class="element-item actinoid metal inner-transition " data-category="actinoid">
+    <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?ga=GA1.1.1942290886.1743748727&semt=ais_hybrid&w=740" alt="">
+  </div>
+</div>
+
+<script src="js/jquery-3.7.1.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
