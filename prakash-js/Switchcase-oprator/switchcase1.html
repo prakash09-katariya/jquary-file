@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting beloow 18</title>
+</head>
+<body>
+    <script>
+        var age = prompt("plese enter number 1 to 3")
+
+        switch(age){
+            case "1":
+            var age1= prompt("plese enter age");
+            if(age1>=18){
+                document.write("you are slected");
+            }
+            else{
+                document.write("not selected");
+            };
+            break;
+
+            case "2":
+            var age1= prompt("plese enter your name");
+            if(age1 === "ramesh"){
+                document.write("your name is",age1);
+            }
+            else{
+                document.write("wrong name enter");
+            };
+            break;
+
+            case "3":
+            var age1= prompt("plese enter password");
+            if(age1 === "1234"){
+                document.write("password : ",age1);
+            }
+            else{
+                document.write("pass not match");
+            };
+            break;
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="myTable" border="1">
+        <tr>
+            <td>Id</td>
+            <td>Title</td>
+            <td>Category</td>
+        </tr>
+    </table>
+</body>
+
+<script>
+
+async function data() {
+    var text = await fetch('https://fakestoreapi.com/products')
+    var a = await text.json()
+    console.log(a)
+
+    var table = document.getElementById('myTable')
+
+    for(i=0 ; i<a.length ;i++)
+{
+    table.innerHTML += '<tr><td>'+a[i].id+'</td><td>'+a[i].title+'</td><td>'+a[i].category+'</td></tr>'
+}
+}
+data()
+
+</script>
+
+</html>

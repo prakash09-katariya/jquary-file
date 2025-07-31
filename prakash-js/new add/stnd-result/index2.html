@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <table border="1">
+        <tr>
+            <td>Name</td>
+            <td>sub1</td>
+            <td>sub2</td>
+            <td>sub3</td>
+            <td>Total</td>
+            <td>Percentage</td>
+            <td>Min</td>
+            <td>Max</td>
+        </tr>
+
+
+        <tbody id="showdata">
+
+        </tbody>
+
+    </table>
+
+</body>
+
+<script>
+
+    let setData = []
+
+    var name = prompt("Enter Name")
+    var sub1 = parseInt(prompt("Enter subject-1 marks"))
+    var sub2 = parseInt(prompt("Enter subject-2 marks"))
+    var sub3 = parseInt(prompt("Enter subject-3 marks"))
+
+    const obj = {name , sub1 , sub2 , sub3}
+    console.log(obj)
+        
+    var per = confirm("DO you want to exit ?") 
+
+    if(per == true)
+    {
+        data()
+    }
+
+
+    function data()
+    {
+    
+        if(name && sub1 && sub2 && sub3)
+    {
+        alert("get the data")
+        setData.push(obj)
+    }
+        printData()
+    }
+
+
+    
+    function getTotal(sub1,sub2,sub3)
+    {
+        return sub1+sub2+sub3
+    }
+
+
+    function getPercentage(total)
+    {
+        return (total/300*100)
+    }
+
+
+    function getMin(sub1,sub2,sub3)
+    {
+        if(sub1 <= sub2 && sub1 <= sub3)
+    {
+        return sub1
+    }
+    else if(sub2 <= sub1 && sub2 <= sub3)
+    {
+        return sub2
+    }
+    else 
+    {
+        return sub3
+    }
+    }
+
+
+    function getMax(sub1,sub2,sub3)
+    {
+        if(sub1 >= sub2 && sub1 >= sub3)
+    {
+        return sub1
+    }
+    else if(sub2 >= sub1 && sub2 >= sub3)
+    {
+        return sub2
+    }
+    else 
+    {
+        return sub3
+    }
+    }
+
+
+    function printData()
+    {
+
+        var data = ''
+      
+        setData.forEach((item , index) => {
+            let total = getTotal(item.sub1 , item.sub2 , item.sub3)
+            let percentage = getPercentage(total)
+            let min = getMin(item.sub1 , item.sub2 , item.sub3)
+            let max = getMax(item.sub1 , item.sub2 , item.sub3)
+
+            data = data + '<tr><td>'+item.name+'</td><td>'+item.sub1+'</td><td>'+item.sub2+'</td><td>'+item.sub3+'</td><td>'+total+'</td><td>'+percentage+'</td><td>'+min+'</td><td>'+max+'</td></tr>'
+        })
+
+        document.getElementById('showdata').innerHTML = data
+    }
+   
+    
+</script>
+
+</html>

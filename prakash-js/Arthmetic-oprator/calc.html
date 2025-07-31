@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Calculator</title>
+  <style>
+    .main-body {
+      width: 400px;
+      margin: auto;
+      margin-top: 50px;
+    }
+
+    .display {
+      display: flex;
+      align-items: center;
+    }
+
+    .form_inpute {
+      width: 80%;
+      padding: 10px;
+      font-size: 1.2rem;
+    }
+
+    .display .btn {
+      width: 20%;
+      padding: 10px;
+      font-size: 1.2rem;
+    }
+
+    .row {
+      display: flex;
+    }
+
+    .row .btn {
+      width: 25%;
+      padding: 20px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-body">
+    <div class="display">
+      <input type="text" class="form_inpute" readonly />
+      <button class="btn" id="del">del</button>
+    </div>
+
+    <div class="row">
+      <button class="btn">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+      <button class="btn operator">+</button>
+    </div>
+    <div class="row">
+      <button class="btn">4</button>
+      <button class="btn">5</button>
+      <button class="btn">6</button>
+      <button class="btn operator">-</button>
+    </div>
+    <div class="row">
+      <button class="btn">7</button>
+      <button class="btn">8</button>
+      <button class="btn">9</button>
+      <button class="btn operator">*</button>
+    </div>
+    <div class="row">
+      <button class="btn">0</button>
+      <button class="btn">.</button>
+      <button class="btn operator">/</button>
+      <button class="btn" id="equal">=</button>
+    </div>
+  </div>
+
+  <script>
+    const input = document.querySelector('.form_inpute');
+    const buttons = document.querySelectorAll('.btn');
+    const delButton = document.getElementById('del');
+    const equalButton = document.getElementById('equal');
+
+    let firstNumber = '';
+    let secondNumber = '';
+    let operator = '';
+    let resultShown = false;
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const value = button.textContent;
+
+        if (value === 'del') {
+          input.value = '';
+          firstNumber = '';
+          secondNumber = '';
+          operator = '';
+          resultShown = false;
+        } else if (value === '=' || button.id === 'equal') {
+          if (firstNumber !== '' && operator !== '' && secondNumber !== '') {
+            const num1 = parseFloat(firstNumber);
+            const num2 = parseFloat(secondNumber);
+            let result = 0;
+
+            if (operator === '+') {
+              result = num1 + num2;
+            } else if (operator === '-') {
+              result = num1 - num2;
+            } else if (operator === '*') {
+              result = num1 * num2;
+            } else if (operator === '/') {
+              result = num2 === 0 ? 'Error' : num1 / num2;
+            }
+
+            input.value = result;
+            firstNumber = result.toString();
+            secondNumber = '';
+            operator = '';
+            resultShown = true;
+          }
+        } else if (['+', '-', '*', '/'].includes(value)) {
+          if (firstNumber !== '' && operator === '') {
+            operator = value;
+            input.value += value;
+          }
+        } else {
+          if (resultShown) {
+            input.value = '';
+            firstNumber = '';
+            resultShown = false;
+          }
+          input.value += value;
+          if (operator === '') {
+            firstNumber += value;
+          } else {
+            secondNumber += value;
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

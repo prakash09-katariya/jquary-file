@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>personal Detail</title>
+  </head>
+  <body>
+    <script>
+      var a = prompt("plese enter the number");
+      switch (a) {
+        case "1":
+          var bank_name = prompt("plese enter your bank name");
+          var Acco_no = prompt("plese enter acc No");
+
+          if (bank_name === "bob") {
+            document.write("bank-name is", bank_name, "<br>");
+            document.write("Acco_no", Acco_no);
+          } else {
+            document.write("you enter wrong bank");
+          }
+          break;
+
+        case "2":
+          document.write("today is Monday");
+          break;
+
+        case "3":
+          document.write("today is Tuesday");
+          break;
+
+        case "4":
+          document.write("today is Wesenday");
+          break;
+
+        case "5":
+          document.write("today is Thursday");
+          break;
+
+        case "6":
+          document.write("today is Friday");
+          break;
+
+        case "7":
+          document.write("today is saterday");
+          break;
+
+        default:
+          document.write("Invalid number. Please enter 1 to 7.");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>Num1</td>
+            <td>Num2</td>
+            <td>Operator</td>
+            <td>Total</td>
+        </tr>
+        <tbody id="showdata">
+
+        </tbody>
+    </table>
+</body>
+
+<script>
+
+
+    let setData = []
+
+    var num1 = parseInt(prompt("Enter number-1"))
+    var num2 = parseInt(prompt("Enter number-2"))
+    var operator = prompt("Enter operator [ + , - , * , /]")
+
+    const obj = {num1 , num2 , operator}
+    console.log(obj)
+
+          
+    var per = confirm("DO you want to exit ?") 
+    
+    if(per == true)
+    {
+        data()
+    }
+
+    function data()
+{
+        if(num1 && num2 && operator)
+        {
+            alert("get the data")
+            setData.push(obj)
+        }
+        printData()
+}
+
+function getTotal(num1,num2,operator)
+{
+    if(operator == '+')
+{
+    return num1+num2
+}
+else if(operator == '-')
+{
+    return num1-num2
+}
+else if(operator == '*')
+{
+    return num1*num2
+}
+else
+{
+    return num1/num2
+}
+}
+
+function printData()
+{
+    var data = ''
+
+    setData.forEach((item,index) => 
+{
+     
+    data = data + '<tr><td>'+item.num1+'</td><td>'+item.num2+'</td><td>'+item.operator+'</td><td>'+getTotal(item.num1 ,item.num2 , item.operator)+'</td></tr>'
+})
+document.getElementById('showdata').innerHTML = data
+}
+
+
+</script>
+
+</html>
+

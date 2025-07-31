@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="name">Name:</label>
+    <input type="text" name="" id="name">
+    <p id="name-error"></p>
+    <label for="sub1">subject-1 mark:</label>
+    <input type="text" name="" id="sub1">
+    <p id="sub1-error"></p>
+    <label for="sub2">subject-2 mark:</label>
+    <input type="text" name="" id="sub2">
+    <p id="sub2-error"></p>
+    <label for="sub3">subject-3 mark:</label>
+    <input type="text" name="" id="sub3">
+    <p id="sub3-error"></p>
+
+    <button onclick="data()">submit</button>
+
+    <table border="1">
+        <tr>
+            <td>Name</td>
+            <td>sub1</td>
+            <td>sub2</td>
+            <td>sub3</td>
+            <td>Total</td>
+            <td>Percentage</td>
+            <td>min</td>
+            <td>max</td>
+            <td>DELETE</td>
+            <td>EDIT</td>
+            
+        </tr>
+
+        <tbody id="showdata">
+
+        </tbody>
+
+    </table>
+
+</body>
+
+<script>
+
+    let setdata = []
+    let editId = null
+    
+
+    function data() {
+        var name = document.getElementById('name').value
+        var sub1 = document.getElementById('sub1').value
+        var sub2 = document.getElementById('sub2').value
+        var sub3 = document.getElementById('sub3').value
+
+        console.log(name);
+        console.log(sub1);
+        console.log(sub2);
+        console.log(sub3);
+
+
+        var m1 = Number(sub1)
+        var m2 = Number(sub2)
+        var m3 = Number(sub3)
+
+
+        const obj = { name, sub1: Number(sub1), sub2: Number(sub2), sub3: Number(sub3) }
+        console.log(obj)
+
+        if (!name) {
+            document.getElementById('name-error').innerHTML = "Enter Name"
+            document.getElementById('name-error').style.color = 'red'
+        }
+        else {
+            document.getElementById('name-error').innerHTML = ''
+        }
+
+
+        if (!sub1) {
+            document.getElementById('sub1-error').innerHTML = "Enter subject-1 mark"
+            document.getElementById('sub1-error').style.color = 'red'
+        }
+        else {
+            document.getElementById('sub1-error').innerHTML = ''
+        }
+
+
+        if (!sub2) {
+            document.getElementById('sub2-error').innerHTML = "Enter subject-2 mark"
+            document.getElementById('sub2-error').style.color = 'red'
+        }
+        else {
+            document.getElementById('sub2-error').innerHTML = ''
+        }
+
+
+        if (!sub3) {
+            document.getElementById('sub3-error').innerHTML = "Enter subject-3 mark"
+            document.getElementById('sub3-error').style.color = 'red'
+        }
+        else {
+            document.getElementById('sub3-error').innerHTML = ''
+        }
+
+
+        if (name && sub1 && sub2 && sub3) {
+            
+
+            if(editId != null)
+        {
+            setdata[editId] = obj
+            editId = null
+        }
+        else 
+        {
+            setdata.push(obj)
+        }
+
+
+            document.getElementById('name').value = ''
+            document.getElementById('sub1').value = ''
+            document.getElementById('sub2').value = ''
+            document.getElementById('sub3').value = ''
+
+            printData()
+
+        }
+    }
+
+
+    function getTotal(m1, m2, m3) {
+        return m1+m2+m3
+    }
+
+
+    function getPercentage(total) {
+        return (total/300*100)
+    }
+
+
+    function getMin(m1, m2, m3) {
+        if (m1 <= m2 && m1 <= m3) {
+            return m1
+        }
+        else if (m2 <= m1 && m2 <= m3) {
+            return m2
+        }
+        else {
+            return m3
+        }
+    }
+
+
+    function getMax(m1, m2, m3) {
+        if (m1 >= m2 && m1 >= m3) {
+            return m1
+        }
+        else if (m2 >= m1 && m2 >= m3) {
+            return m2
+        }
+        else 
+        {
+            return m3
+        }
+    }
+
+
+    function printData() {
+
+        console.log(setdata)
+
+        var data = ''
+
+        setdata.forEach((item,index) => {
+
+            let total = getTotal(item.sub1, item.sub2, item.sub3)
+            let percentage = getPercentage(total)
+            let min = getMin(item.sub1, item.sub2, item.sub3)
+            let max = getMax(item.sub1, item.sub2, item.sub3)
+
+            data = data + '<tr><td>' + item.name + '</td><td>' + item.sub1 + '</td><td>' + item.sub2 + '</td><td>' + item.sub3 + '</td><td>' + total + '</td><td>' + percentage + '</td><td>' + min + '</td><td>' + max + '</td><td><button style="    background:red ; color:white"onclick = deleteData('+index+')>DElETE</button></td><td><button style="    background:yellow ; color:black"onclick = editData('+index+')>EDIT</button></td></tr>'
+
+        })
+
+        document.getElementById('showdata').innerHTML = data
+    }
+
+
+    function deleteData(index)
+    {
+        setdata.splice(index , 1)
+        printData()
+    }
+
+
+    function editData(index)
+    {
+
+        const editData = setdata[index]
+        editId = index
+
+        document.getElementById('name').value = editData.name
+        document.getElementById('sub1').value = editData.sub1
+        document.getElementById('sub2').value = editData.sub2
+        document.getElementById('sub3').value = editData.sub3
+
+    }
+
+   
+</script>
+
+</html>

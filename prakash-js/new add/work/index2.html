@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+</body>
+
+<script>
+
+// localStorage.setItem('name' , 'xyz')
+
+// var a = localStorage.getItem('name')
+// console.log(a)
+
+// localStorage.removeItem('name')
+
+
+// sessionStorage.setItem('pass' , 'hy456')
+
+// var b = sessionStorage.getItem('pass')
+
+// console.log(b)
+
+// sessionStorage.removeItem('pass')
+
+
+async function store() {
+    var text = await fetch('https://fakestoreapi.com/products')
+    var b = await text.json()
+    console.log(b)
+}
+store()
+
+async function data() {
+    var text = await fetch('https://fakestoreapi.com/products/1')
+    var a = await text.json()
+    console.log(a)
+}
+data()
+</script>
+
+</html>

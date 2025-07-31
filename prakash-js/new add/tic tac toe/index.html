@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body 
+        {
+            background-color:#2f2f8d;
+            text-align: center;
+        }
+
+        h1 
+        {
+            color:#fff;
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing: 3px;
+            margin-top: 30px;
+        }
+
+        .content 
+        {
+            height:438px;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+        }
+
+        .game-board 
+        {
+            height:370px;
+            width:370px;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            flex-wrap:wrap;
+            gap:20px;
+        }
+
+        .box 
+        {
+            height:100px;
+            width:100px;
+            background-color:#f0cfa4;
+            border-radius: 10px;
+            border: none;
+            color:#ff0000;
+            font-size:85px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        .box:hover
+        {
+            background-color:#f1c68d;
+        }
+
+        #reset-btn 
+        {
+            padding: 10px 20px;
+            background-color: #7ec9e7;
+            font-size:20px;
+            border:none;
+            border-radius:10px;
+        }
+    
+    #reset-btn:hover 
+    {
+        background-color: #368fb3;
+    }
+
+    #msg
+    {
+        font-size:30px;
+        letter-spacing: 2px;
+        color:#fff;
+        display: none;
+    }
+        
+    </style>
+  
+</head>
+<body>
+
+    <h1>Tic-Tac-Toe Game</h1>
+
+    <p id="msg"></p>
+    
+    <div class="content">
+        <div class="game-board">
+            <div class="box" id="b0"></div>
+            <div class="box" id="b1"></div>
+            <div class="box" id="b2"></div> 
+            <div class="box" id="b3"></div>
+            <div class="box" id="b4"></div>
+            <div class="box" id="b5"></div>
+            <div class="box" id="b6"></div>
+            <div class="box" id="b7"></div>
+            <div class="box" id="b8"></div>
+        </div>
+    </div>
+
+    <button id="reset-btn">Reset Game</button>
+
+    <script>
+
+        let msg = document.querySelector('#msg')
+        let player = "X"
+
+        let b0 = document.querySelector('#b0')
+        let b1 = document.querySelector('#b1')
+        let b2 = document.querySelector('#b2')
+        let b3 = document.querySelector('#b3')
+        let b4 = document.querySelector('#b4')
+        let b5 = document.querySelector('#b5')
+        let b6 = document.querySelector('#b6')
+        let b7 = document.querySelector('#b7')
+        let b8 = document.querySelector('#b8')
+
+        function mark(btn)
+        {
+            if(btn.innerHTML === "" && !btn.disabled)
+        {
+            btn.innerHTML = player
+            player = player === "X" ? "O" : "X"
+            winner()
+        }
+        }
+
+        b0.addEventListener("click" , function() {mark(b0)})
+        b1.addEventListener("click" , function() {mark(b1)})
+        b2.addEventListener("click" , function() {mark(b2)})
+        b3.addEventListener("click" , function() {mark(b3)})
+        b4.addEventListener("click" , function() {mark(b4)})
+        b5.addEventListener("click" , function() {mark(b5)})
+        b6.addEventListener("click" , function() {mark(b6)})
+        b7.addEventListener("click" , function() {mark(b7)})
+        b8.addEventListener("click" , function() {mark(b8)})
+
+  
+        function winner()
+        {
+            if(b0.innerHTML !== "" && b0.innerHTML===b1.innerHTML && b1.innerHTML===b2.innerHTML)
+        {
+            b0.style.color = 'green'
+            b1.style.color = 'green'
+            b2.style.color = 'green'
+            b0.style.backgroundColor = 'pink'
+            b1.style.backgroundColor = 'pink'
+            b2.style.backgroundColor = 'pink'
+            msg.style.display = 'block'
+            msg.innerText = "The winner is " + b0.innerHTML
+            disableBtn()
+        }
+        else if(b3.innerHTML !== "" && b3.innerHTML===b4.innerHTML && b4.innerHTML===b5.innerHTML)
+        {
+            b3.style.color = 'green'
+            b4.style.color = 'green'
+            b5.style.color = 'green'
+            b3.style.backgroundColor = 'pink'
+            b4.style.backgroundColor = 'pink'
+            b5.style.backgroundColor = 'pink'
+            msg.style.display = 'block'
+            msg.innerText = "The winner is " + b3.innerHTML
+            disableBtn()
+        }
+        else if(b6.innerHTML !== "" && b6.innerHTML===b7.innerHTML && b7.innerHTML===b8.innerHTML)
+        {
+            b6.style.color = 'green'
+            b7.style.color = 'green'
+            b8.style.color = 'green'
+            b6.style.backgroundColor = 'pink'
+            b7.style.backgroundColor = 'pink'
+            b8.style.backgroundColor = 'pink'
+            msg.style.display = 'block'
+            msg.innerText = "The winner is " + b6.innerHTML
+            disableBtn()
+        }
+        else if(b0.innerHTML !== "" && b0.innerHTML===b3.innerHTML && b3.innerHTML===b6.innerHTML)
+        {
+            b0.style.color = 'green'
+            b3.style.color = 'green'
+            b6.style.color = 'green'
+            b0.style.backgroundColor = 'pink'
+            b3.style.backgroundColor = 'pink'
+            b6.style.backgroundColor = 'pink'
+            msg.style.display = 'block'
+            msg.innerText = "The winner is " + b0.innerHTML
+            disableBtn()
+        }
+        else if(b1.innerHTML !== "" && b1.innerHTML===b4.innerHTML && b4.innerHTML===b7.innerHTML)
+        {
+            b1.style.color = 'green'
+            b4.style.color = 'green'
+            b7.style.color = 'green'
+            b1.style.backgroundColor = 'pink'
+            b4.style.backgroundColor = 'pink'
+            b7.style.backgroundColor = 'pink'
+            msg.style.display = 'block'
+            msg.innerText = "The winner is " + b1.innerHTML
+            disableBtn()
+        }
+        else if(b2.innerHTML !== "" && b2.innerHTML===b5.innerHTML && b5.innerHTML===b8.innerHTML)
+        {
+            b2.style.color = 'green'
+            b5.style.color = 'green'
+            b8.style.color = 'green'
+            b2.style.backgroundColor = 'pink'
+            b5.style.backgroundColor = 'pink'
+            b8.style.backgroundColor = 'pink'
+            msg.style.display = 'block'
+            msg.innerText = "The winner is " + b2.innerHTML
+            disableBtn()
+        }
+        else if(b0.innerHTML !== "" && b0.innerHTML===b4.innerHTML && b4.innerHTML===b8.innerHTML)
+        {
+            b0.style.color = 'green'
+            b4.style.color = 'green'
+            b8.style.color = 'green'
+            b0.style.backgroundColor = 'pink'
+            b4.style.backgroundColor = 'pink'
+            b8.style.backgroundColor = 'pink'
+            msg.style.display = 'block'
+            msg.innerText = "The winner is " + b0.innerHTML
+            disableBtn()
+        }
+        else if(b2.innerHTML !== "" && b2.innerHTML===b4.innerHTML && b4.innerHTML===b6.innerHTML)
+        {
+            b2.style.color = 'green'
+            b4.style.color = 'green'
+            b6.style.color = 'green'
+            b2.style.backgroundColor = 'pink'
+            b4.style.backgroundColor = 'pink'
+            b6.style.backgroundColor = 'pink'
+            msg.style.display = 'block'
+            msg.innerText = "The winner is " + b2.innerHTML
+            disableBtn()
+        }
+        else if(b0.innerHTML !== "" && b1.innerHTML !== "" && b2.innerHTML !== "" && b3.innerHTML !== "" && b4.innerHTML !== "" && b5.innerHTML !== "" && b6.innerHTML !== "" && b7.innerHTML !== "" && b8.innerHTML !== "")
+        {
+            msg.style.display = 'block'
+            msg.innerText = "It's Draw "
+            disableBtn()
+        }
+        }
+
+        function disableBtn()
+        {
+            b0.disabled = true
+            b1.disabled = true
+            b2.disabled = true
+            b3.disabled = true
+            b4.disabled = true
+            b5.disabled = true
+            b6.disabled = true
+            b7.disabled = true
+            b8.disabled = true
+        }
+
+       let resetBtn = document.querySelector('#reset-btn')
+
+       resetBtn.addEventListener('click', function() {
+
+        b0.innerHTML = "" ; b0.disabled=false ; msg.style.display = 'none' ; b0.style.backgroundColor = '#f0cfa4'
+        b1.innerHTML = "" ; b1.disabled=false ; msg.style.display = 'none' ; b1.style.backgroundColor = '#f0cfa4'
+        b2.innerHTML = "" ; b2.disabled=false ; msg.style.display = 'none' ; b2.style.backgroundColor = '#f0cfa4'
+        b3.innerHTML = "" ; b3.disabled=false ; msg.style.display = 'none' ; b3.style.backgroundColor = '#f0cfa4'
+        b4.innerHTML = "" ; b4.disabled=false ; msg.style.display = 'none' ; b4.style.backgroundColor = '#f0cfa4'
+        b5.innerHTML = "" ; b5.disabled=false ; msg.style.display = 'none' ; b5.style.backgroundColor = '#f0cfa4'
+        b6.innerHTML = "" ; b6.disabled=false ; msg.style.display = 'none' ; b6.style.backgroundColor = '#f0cfa4'
+        b7.innerHTML = "" ; b7.disabled=false ; msg.style.display = 'none' ; b7.style.backgroundColor = '#f0cfa4'
+        b8.innerHTML = "" ; b8.disabled=false ; msg.style.display = 'none' ; b8.style.backgroundColor = '#f0cfa4'
+        
+        player="X"
+    })
+
+    </script>
+</body>
+</html>

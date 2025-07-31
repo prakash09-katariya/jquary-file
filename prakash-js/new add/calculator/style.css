@@ -1,0 +1,95 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+.content 
+{
+    height: 550px;
+    display: flex;
+    justify-content: center;
+}
+
+.inner-content 
+{
+    display: flex;
+    height: 500px;
+    width: 350px;
+    border : 1px solid black;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap:15px;
+    background-color:#e5f0f53b;
+}
+
+input 
+{
+    text-align: end;
+    height:60px;
+    margin-top: 10px;
+    width: 315px;
+    background-color: #eaf0f3;
+    font-size: 30px;
+    text-align: end;
+    border-radius:8px;
+}
+
+.digit-div 
+{
+    display: flex;
+    width: 330px;
+    height: 380px;
+}
+
+.flex
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+
+.digit-div ul li 
+{
+    list-style-type: none;
+    margin-top: 10px;
+    gap:30px;
+    display: flex;
+}
+
+.digit-div ul li button 
+{
+    height: 70px;
+    width: 70px;
+    border-radius:8px;
+    border:1px solid #c7ebfa; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:22px;
+    box-shadow: 0px 0px 5px rgba(0 , 0 , 0 , 0.5);
+}
+
+
+.digit-div ul li button.equal 
+{
+    background-color: #2b2a2ad9;
+    color:#fff;
+}
+
+.digit-div ul li button.clear
+{
+    width: 150px;
+    height: 60px;
+    color:#ff0000;
+    text-transform: capitalize;
+}
+
+.digit-div ul li button.backspace
+{
+    width: 150px;
+    height: 60px;
+     text-transform: capitalize;
+     color:green;
+}

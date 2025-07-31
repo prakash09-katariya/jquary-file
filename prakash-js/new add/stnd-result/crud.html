@@ -1,0 +1,116 @@
+<!-- c => create
+r => read
+u => update
+d => delete -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" name="" id="name">
+    <p id="name-error"></p><br><br>
+    <input type="text" name="" id="surname">
+    <p id="surname-error"></p><br><br>
+
+    <button onclick="data()">submit</button>
+
+    <table border="1">
+        <tr>
+            <td>Name</td>
+            <td>Surname</td>
+            <td>DELETE</td>
+            <td>EDIT</td>
+        </tr>
+        <tbody id="showData">
+
+        </tbody>
+    </table>
+
+
+    <!-- array [] => index -->
+    <!-- object {key : value , key : value} => . -->
+    <!-- obj = {name : "demo" , age : 23} obj.name -->
+    <script>
+
+
+        let setData = []
+        let editId = null
+
+
+        function data() {
+            var name = document.getElementById('name').value
+            var surname = document.getElementById('surname').value
+            console.log(name)
+            console.log(surname)
+
+            const obj = { name, surname }
+            console.log(obj)
+
+            if (!name) {
+                document.getElementById('name-error').innerText = " Enter name"
+            }
+            else {
+                document.getElementById('name-error').innerText = ""
+            }
+
+
+            if (!surname) {
+                document.getElementById('surname-error').innerText = " Enter surname"
+            }
+            else {
+                document.getElementById('surname-error').innerText = ""
+            }
+
+            if (name && surname) {
+                
+                if (editId != null) {
+                    setData[editId] = obj
+                    editId=null
+                }
+                else {
+                    setData.push(obj)
+                }
+
+                document.getElementById('name').value = ""
+                document.getElementById('surname').value = ""
+                printData()
+
+            }
+        }
+
+        function printData() {
+            console.log(setData)
+            var data = ''
+            setData.forEach((item, index) => {
+                data = data + '<tr><td>' + item.name + '</td><td>' + item.surname + '</td><td><button onclick=deleteData(' + index + ')>delete</button></td><td><button onclick=editData(' + index + ')>edit</button></td></tr>'
+            })
+
+            document.getElementById('showData').innerHTML = data
+        }
+
+        function deleteData(index) {
+            // console.log(index);
+            setData.splice(index, 1)
+            printData()
+
+        }
+        function editData(index) {
+            const editData = setData[index]
+            // console.log(editData);
+            editId = index
+            document.getElementById('name').value = editData.name
+            document.getElementById('surname').value = editData.surname
+        }
+
+    </script>
+
+</body>
+
+</html>
