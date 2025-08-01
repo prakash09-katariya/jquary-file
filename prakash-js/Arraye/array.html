@@ -1,0 +1,132 @@
+<script>
+    var a=12
+    var b=90
+
+    //  + => string oprator
+    document.write("Total = "+a+b)
+    document.write("<br>Total = "+(a+b))
+    document.write("<br>Total = ",a+b)
+</script>
+
+<script>
+    var array = [12,90]
+
+    var count = array.length
+    document.write(count)
+    // document.write(array[0])
+    // document.write(array[1])
+    // document.write(array[2])
+
+    var sum = 0
+    for(var i=0 ; i<array.length ; i++)
+{
+    document.write("<br>"+array[i])
+}
+
+for(var i=0 ; i<array.length ; i++)
+{
+    sum = sum + array[i]
+}
+document.write("<br>"+sum)
+</script>
+
+
+
+
+
+    <h1>Sum of Array</h1>
+    <script>
+        var array=[1, 2, 3, 4, 5]
+        var sum = 0;
+        for(var i=0; i < array.length; i++) {
+            document.write(array[i] + "<br>")
+        }
+        for (var i = 0; i < array.length; i++) {
+            sum = sum + array[i];
+        }
+        document.write("sum : " + sum + "<br>")
+    </script>
+
+    <h1>min array</h1>
+    <script>
+        var array=[1, 2, 3, 4, 5]
+        var min = array[0];
+        for(var i=0; i < array.length; i++) {
+            document.write(array[i] + "<br>")
+        }
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+            }
+        }
+        document.write("min : " + min + "<br>")
+    </script>
+
+    <h1>max array</h1>
+    <script>
+        var array=[1, 2, 3, 4, 5]
+        var max = array[0];
+        for(var i=0; i < array.length; i++) {
+            document.write(array[i] + "<br>")
+        }
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+        document.write("max : " + max + "<br>")
+    </script>
+
+    <h1>count array</h1>
+    <script>
+        var array=[1, 2, 3, 4, 5]
+        var count = 0;
+        for(var i=0; i < array.length; i++) {
+            document.write(array[i] + "<br>")
+        }
+        for (var i = 0; i < array.length; i++) {
+           if(array[i] > 0) {
+                count ++;
+            }
+        }
+        document.write("count : " + count + "<br>")
+    </script>
+
+    <h1>multi array</h1>
+    <script>
+        var array=[1, 2, 3, 4, 5]
+        var multi = 1;
+        for(var i=0; i < array.length; i++) {
+            document.write(array[i] + "<br>")
+        }
+        for (var i = 0; i < array.length; i++) {
+            multi = multi * array[i];
+        }
+        document.write("multi : " + multi + "<br>")
+    </script>
+
+
+    <h1>asciding</h1>
+    <script>
+        
+    </script>
+
+
+    <!-- <h1>sort array</h1>
+    <script>
+        var array=[1,4,3,2,5]
+        var sort = [];
+        for(var i=0; i < array.length; i++) {
+            document.write(array[i] + "<br>")
+        }
+        for (var i = 0; i < array.length; i++) {
+            sort.push(array[i]);
+        }
+        sort.sort();
+        document.write("sort : " + sort + "<br>")
+    </script> -->
+
+ 
+
+
+

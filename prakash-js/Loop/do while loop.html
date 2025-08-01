@@ -1,0 +1,93 @@
+<style>
+    body {
+        background-color: lightblue;
+        color: black;
+    }
+    h1{
+        text-align: center;
+        background-color: black;
+        color: white;
+    }
+</style>
+
+
+<h1>1 to 10</h1>
+<script>
+    var a=1
+    do{
+        document.write(a+"<br>")
+        a++
+    }
+    while(a<=10)
+</script>
+
+<h1>10 to 1</h1>
+<script>
+    var a=10
+    do{
+        document.write(a+"<br>")
+        a--
+    }
+    while(a>=1)
+</script>
+
+<h1>sum</h1>
+<script>
+    var a=1,sum=0
+    do{
+        document.write(a+"<br>")
+        sum=sum+a
+        a++
+    }
+    while(a<=10)
+    document.write("sum = "+sum+"<br>")
+</script>
+
+<h1>table</h1>
+<script>
+    var a=1
+    do{
+        document.write("8 * "+a+" = "+8*a+"<br>")
+        a++
+    }
+    while(a<=10)
+</script>
+
+<h1>point value</h1>
+<script>
+    var n=456 , rem , sum=0
+ do{
+     rem = n%10
+     sum  = sum +rem
+     n  = (n/10)
+ }
+ while(n!=0)
+ document.write(sum)
+
+</script>
+
+<h1> point value ne int ma conversion</h1>
+<script>
+       var n=456 , rem , sum=0
+    do{
+        rem = n%10
+        sum  = sum +rem
+        n  = parseInt(n/10)
+    }
+    while(n!=0)
+    document.write(sum)
+
+</script>
+
+
+<h1>Factorial</h1>
+<script>
+    var a=1,multi=0
+    do{
+        document.write(a+"<br>")
+        multi=multi+a
+        a++
+    }
+    while(a<=5)
+    document.write("multi = "+multi+"<br>")
+</script>

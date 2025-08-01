@@ -1,0 +1,87 @@
+es6
+ECMA script
+<br>
+<br>
+anonymous function
+=> function have no name
+=> variable store
+<br>
+<br>
+arrow function
+=> function syntax short
+<br>
+<br>
+immdiately invoked function
+=> function have no name
+=> not to store in any variable
+=> first [Run]
+<br>
+<br>
+closures function
+=> outer function scope use to inner function
+<br><br>
+callback function
+=> one function pass as argument to another function
+that is call callback
+<br>
+<br>
+<script>
+
+    function myFunction()
+    {
+
+    }
+    myFunction()
+
+    // anonymous function
+
+    const anonyFunction = function(){
+        console.log("hello!! check function");
+    }
+    anonyFunction()
+
+
+    // arrow function
+
+    const arrowFunction = () => {
+        console.log("check arrow function");
+    }
+    arrowFunction();
+
+
+    // immdiately invoked function
+
+    (function(){
+        console.log("check");
+    })()
+
+
+
+    // closures function
+
+    function myOuter()
+    {
+        var a=12
+        function myInner()
+        {
+            console.log(a);
+        }
+        myInner()
+    }
+    myOuter()
+
+    // callback function
+
+    function myFunction(name, callback) {
+        console.log("check that function..." + name);
+        callback()
+    }
+    function callback() {
+        var a = 90;
+        console.log("check callback data" + a);
+
+    }
+    myFunction("demo", callback) //pass function
+
+
+</script>

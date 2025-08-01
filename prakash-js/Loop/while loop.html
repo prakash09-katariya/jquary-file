@@ -1,0 +1,179 @@
+<style>
+    body {
+        background-color: lightblue;
+        color: black;
+    }
+    h2{
+        text-align: center;
+        background-color: black;
+        color: white
+        
+    }
+</style>
+
+
+<h2>1 to 10</h2>
+<script>
+    var a = 1
+    while(a<=10)
+{
+    document.write(a+"<br>")
+    a++
+}
+</script>
+
+
+<h2>10 to 1</h2>
+<script>
+    var a = 10
+    while(a>=1)
+{
+    document.write(a+"<br>")
+    a--
+}
+</script>
+
+
+<h2>Sum</h2>
+<script>
+    var a = 1 ,sum =0
+    while(a<=10)
+{
+    document.write(a+"<br>")
+    sum = sum + a
+    a++
+}
+document.write("sum =  "+sum+"<br>")
+</script>
+
+
+
+<h2>Table</h2>
+<script>
+    var a = 1 ,sum =0
+    while(a<=10)
+{
+    document.write("2 * "+a+" = "+2*a+"<br>")
+    a++
+}
+</script>
+
+
+<h2>Factorial</h2>
+<script>
+    var a = 1 ,multi =1
+    while(a<=5)
+{
+    document.write(a+"<br>")
+    multi = multi * a      
+    a++
+}
+document.write("multi =  "+multi+"<br>")
+</script>
+
+
+<h2>Type Casting Point Value</h2>
+<script>
+    var n=456 , rem , sum=0
+
+while(n!=0)
+{
+    rem = n%10
+    sum  = sum +rem
+    n  = (n/10)
+}
+
+document.write(sum)
+</script>
+
+
+
+<h2>Type Casting Point Value Ne Int Ma Conversion</h2>
+<script>
+    var n=456 , rem , sum=0
+while(n!=0)
+{
+    rem = n%10
+    sum  = sum +rem
+    n  = parseInt(n/10)
+}
+
+document.write(sum)
+</script>
+
+<h2> armstrong number</h2>
+
+<script>
+    var n = 153;
+    var copy = n, last;
+    var sum = 0;
+
+    while (n > 0) {
+        last = n % 10;
+        sum = sum + (last * last * last);
+        document.write("<br>" + last);
+        n = parseInt(n / 10);
+    }
+
+    document.write("<br>" + sum);
+
+    if (sum == copy) {
+        document.write(" " + "is Armstrong number");
+    }
+    else {
+        document.write(" " + "is not Armstrong number");
+    }
+</script>
+
+
+<h2>spy number</h2>
+
+<script>
+    var n = 123;
+    var copy = n, last;
+    var sum = 0, multi = 1;
+
+    while (n > 0) {
+        last = n % 10;
+        sum = sum + last;
+        multi = multi * last;
+        document.write("<br>" + last);
+        n = parseInt(n / 10);
+    }
+
+    document.write("<br>" + "sum  is a = " + sum);
+    document.write("<br>" + "multiplication is a = " + multi);
+
+    if (sum == multi) {
+        document.write("<br>" + copy + " is a spy  number");
+    }
+    else {
+        document.write("<br>" + copy + " is not a spy number");
+    }
+</script>
+
+
+
+<h2>neon number</h2>
+
+<script>
+    var n = 9, sq;
+    var sem = n, last, sum = 0;
+    sq = n * n;
+
+    while (sq > 0) {
+        last = sq % 10;
+        sum = sum + last;
+        document.write("<br>" + last);
+        sq = parseInt(sq / 10);
+    }
+
+    document.write("<br>" + "sum is a = " + sum);
+
+    if (sem == sum) {
+        document.write("<br>" + sem + " is neon number");
+    }
+    else {
+        document.write("<br>" + sem + "is not a neon number");
+    } 
+</script>
