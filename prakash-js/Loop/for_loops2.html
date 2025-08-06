@@ -1,56 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h2>1 થી 20 સુધીના બધા even numbers print કરો.</h2>
     <script>
-        for(i=1;i<=20;i++){
-            if(i % 2===0){
-                document.write(i,"<br>")
-            }
+      for (i = 1; i <= 20; i++) {
+        if (i % 2 === 0) {
+          document.write(i, "<br>");
         }
+      }
     </script>
-     <h2>1 થી 10 સુધીના બધા numbers print કરો, પરંતુ 5 ને skip કરો.</h2>
+    <h2>1 થી 10 સુધીના બધા numbers print કરો, પરંતુ 5 ને skip કરો.</h2>
     <script>
-        for(i=1;i<=10;i++){
-            if(i === 5){
-                continue
-            }
-            document.write(i,",<br>")
+      for (i = 1; i <= 10; i++) {
+        if (i === 5) {
+          continue;
         }
+        document.write(i, ",<br>");
+      }
     </script>
-     <h2>0 થી 1 સુધી countdown કરો, પણ જો number 6 આવે તો loop રોકો..</h2>
+    <h2>0 થી 1 સુધી countdown કરો, પણ જો number 6 આવે તો loop રોકો..</h2>
     <script>
-         for(i=1;i<=10;i++){
-            if(i === 6){
-               break
-            }
-            document.write(i,",<br>")
+      for (i = 1; i <= 10; i++) {
+        if (i === 6) {
+          break;
         }
+        document.write(i, ",<br>");
+      }
     </script>
-     <h2>1 થી 15 સુધીના numbers loop કરો અને બધાં Odd numbers છાપો.</h2>
+    <h2>1 થી 15 સુધીના numbers loop કરો અને બધાં Odd numbers છાપો.</h2>
     <script>
-         for(i=1;i<=15;i++){
-            if(i % 2 === 0){
-               document.write(i,"<br>")
-            }
-        
+      for (i = 1; i <= 15; i++) {
+        if (i % 2 === 0) {
+          document.write(i, "<br>");
         }
+      }
     </script>
-     <h2>user પાસેથી number prompt માં માંગુ અને એની table print કરો (1 to 10).</h2>
+    <h2>
+      user પાસેથી number prompt માં માંગુ અને એની table print કરો (1 to 10).
+    </h2>
     <script>
-        var user=prompt("plese enter value")
-        for(i=1;i<=10;i++){
-            document.write(user*i,"<br>")
+      var user = prompt("plese enter value");
+      for (i = 1; i <= 10; i++) {
+        document.write(user * i, "<br>");
+      }
+    </script>
+    <h2>"*" નો use કરીને આવી pattern print કરો:</h2>
+    <script>
+      for (var i = 1; i <= 5; i++) {
+        for (var j = 1; j <= 5; j++) {
+          document.write("*");
         }
+        document.write("<br>");
+      }
     </script>
-     <h2> "*" નો use કરીને આવી pattern print કરો:</h2>
+    <h2>"*" નો use કરીને આવી pattern print કરો:</h2>
     <script>
-        
+      for (var i = 1; i <= 5; i++) {
+        for (var j = 1; j <= i; j++) {
+          document.write("*");
+        }
+        document.write("<br>");
+      }
     </script>
-</body>
+
+    <h2>"*" નો use કરીને આવી pattern print કરો:</h2>
+    <script>
+      for (var i = 5; i >= 1; i--) {
+        for (var j = 5; j >= i; j--) {
+          document.write(i);
+        }
+        document.write("<br>");
+      }
+    </script>
+    <h2>"*" નો use કરીને આવી pattern print કરો:</h2>
+    <script>
+      for (var i = 1; i <= 5; i++) {
+        for (var j = 1; j <= 5; j++) {
+          document.write(i);
+        }
+        document.write("<br>");
+      }
+    </script>
+
+    <script>
+      var a = 50,
+        b = 40,
+        c = 30;
+
+      var result =
+        a > b
+          ? a > c
+            ? "a is biggest"
+            : "c is biggest"
+          : b > c
+          ? "b is biggest"
+          : "c is biggest";
+
+      document.write(result);
+    </script>
+
+    <script>
+    var a = 50, b = 140, c = 6, d = 90;
+
+    var max = (a > b && a > c && a > d) ? "a is max" :
+          (b > c && b > d) ? "b is max" :
+          (c > d) ? "c is max" :
+          "d is max";
+
+document.write(max);
+    </script>
+  </body>
 </html>
