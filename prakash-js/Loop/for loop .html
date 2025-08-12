@@ -1,86 +1,85 @@
 <h1>For Loop</h1>
 <h2>1 to 10</h2>
 <script>
-    for (var a = 1; a <= 10; a++) {
-        document.write(a + "<br>")
-    }     
+  for (var a = 1; a <= 10; a++) {
+    document.write(a + "<br>");
+  }
 </script>
 
 <h2>10 to 1</h2>
 <script>
-    for (var a = 10; a >= 1; a--) {
-        document.write(a + "<br>")
-    }
+  for (var a = 10; a >= 1; a--) {
+    document.write(a + "<br>");
+  }
 </script>
 
 <h2>Sum</h2>
 <script>
-    var sum = 0
-    for (var a = 1; a <= 10; a++) {
-        document.write(a + "<br>")
-        sum = sum + a
-    }
-    document.write("sum = " + sum + "<br>")
+  var sum = 0;
+  for (var a = 1; a <= 10; a++) {
+    document.write(a + "<br>");
+    sum = sum + a;
+  }
+  document.write("sum = " + sum + "<br>");
 </script>
 
 <h2>Table</h2>
 <script>
-    for (var a = 1; a <= 10; a++) {
-        document.write("3 * " + a + " = " + 3 * a + "<br>")
-    }
+  for (var a = 1; a <= 10; a++) {
+    document.write("3 * " + a + " = " + 3 * a + "<br>");
+  }
 </script>
 
 <h2>Point Value</h2>
 <script>
-    var n = 456, rem, sum = 0
-    for (; n != 0;) {
-        rem = n % 10
-        sum = sum + rem
-        n = (n / 10)
-    }
-    document.write(sum)
+  var n = 456, rem, sum = 0
+  for ( n != 0;) {
+      rem = n % 10
+      sum = sum + rem
+      n = (n / 10)
+  }
+  document.write(sum)
 </script>
-
-
 
 <h2>Type Casting Point Value</h2>
 <script>
-    var n = 456, rem, sum = 0
-    for (; n != 0;) {
-        rem = n % 10
-        sum = sum + rem
-        n = parseInt(n / 10)
-    }
-    document.write(sum)
+  var n = 456,
+    rem,
+    sum = 0;
+  for (; n != 0; ) {
+    rem = n % 10;
+    sum = sum + rem;
+    n = parseInt(n / 10);
+  }
+  document.write(sum);
 </script>
-
 
 <h2>Factorial</h2>
 <script>
-    var multi = 1
-    for (var a = 1; a <= 5; a++) {
-        document.write(a + "<br>")
-        multi = multi * a
-    }
-    document.write("multi =  " + multi + "<br>")
+  var multi = 1;
+  for (var a = 1; a <= 5; a++) {
+    document.write(a + "<br>");
+    multi = multi * a;
+  }
+  document.write("multi =  " + multi + "<br>");
 </script>
 
 <h1>parten</h1>
 <script>
-    for (var i = 1; i <= 5; i++) {
-        for (var j = 1; j <= i; j++) {
-            document.write("*")
-        }
-        document.write("<br>")
+  for (var i = 1; i <= 5; i++) {
+    for (var j = 1; j <= i; j++) {
+      document.write("*");
     }
+    document.write("<br>");
+  }
 </script>
 
 <h1>number parten</h1>
 <script>
-    for (var i = 1; i <= 5; i++) {
-        for (var j = 1; j <= i; j++) {
-            document.write(j)
-        }
-        document.write("<br>")
+  for (var i = 1; i <= 5; i++) {
+    for (var j = 1; j <= i; j++) {
+      document.write(j);
     }
+    document.write("<br>");
+  }
 </script>
