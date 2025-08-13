@@ -13,6 +13,81 @@
         }
         document.write("<br>");
       }
+      document.write("<br>");
+      for (var i = 2; i <= 10; i += 2) {
+        for (j = 2; j <= i; j += 2) {
+          document.write(j);
+        }
+        document.write("<br>");
+      }
+      document.write("<br>");
+      for (var i = 1; i <= 5; i++) {
+        for (j = 1; j <= 5; j++) {
+          document.write("*");
+        }
+        document.write("<br>");
+      }
+
+      document.write("<br>");
+      for (var i = 1; i <= 5; i++) {
+        for (j = 1; j <= i; j++) {
+          document.write("*");
+        }
+        document.write("<br>");
+      }
+
+      for (var i = 5; i >= 1; i--) {
+        for (var j = 1; j <= i; j++) {
+          document.write("*");
+        }
+        document.write("<br>");
+      }
+
+      for (var i = 5; i >= 1; i--) {
+        document.write(i, "<br>");
+      }
+      document.write("<br>");
+      for (var i = 1; i <= 5; i++) {
+        document.write(i, "<br>");
+      }
+
+      for (var i = 5; i >= 1; i--) {
+        document.write(i, "<br>");
+      }
+
+      for (var i = 5; i >= 1; i--) {
+        // Outer loop - rows
+        for (var j = 1; j <= i; j++) {
+          // Inner loop - stars
+          document.write("*");
+        }
+        document.write("<br>"); // Next line
+      }
+      document.write("<br>");
+      for (var i = 3; i <= 50; i *= 2) {
+        for (var j = 3; j <= i; j *= 2) {
+          document.write(j);
+        }
+        document.write("<br>");
+      }
+      document.write("<br>");
+      for (var i = 1; i <= 10; i++) {
+        var k = 3;
+        document.write(i, "  ");
+        for (var j = 2; j <= i; j++) {
+          document.write((k *= 2), " ");
+        }
+        document.write("<br>");
+      }
+
+      document.write("<br>");
+
+      for (var i = 1; i <= 10; i++) {
+        for (var j = 1; j <= i; j *= 2) {
+          document.write(j);
+        }
+        document.write("<br>");
+      }
     </script>
   </body>
 </html>
