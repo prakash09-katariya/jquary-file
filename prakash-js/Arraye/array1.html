@@ -1,31 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        let fruits = ["Apple", "Banana", "Mango", "Orange"];
-        document.write("fruits=", fruits);
+      let fruits = ["Apple", "Banana", "Mango", "Orange"];
+      document.write("fruits=", fruits);
     </script>
 
     <h1>1. push()-mango</h1>
     <script>
-        const fruit = ["Apple", "Banana"];
-        fruits.push("Mango");
-        document.write(fruits); 
+      const fruit = ["Apple", "Banana"];
+      fruits.push("Mango");
+      document.write(fruits);
     </script>
 
-      <h1>1. pop()-mango</h1>
+    <h1>1. pop()-mango</h1>
     <script>
-        const fru = ["Apple", "Banana"];
-        fruits.pop("Mango");
-        document.write(fru); 
+      const fru = ["Apple", "Banana"];
+      fruits.pop("Mango");
+      document.write(fru);
     </script>
-</body>
 
+    <h1>1. shift()-mango</h1>
+    <script>
+      var product = ["Apple", "Banana"];
+      product.shift();
+      document.write(product);
+    </script>
+
+    <h1>1. unshift()-mango</h1>
+    <script>
+      var product = ["Apple", "Banana"];
+      product.unshift("mango");
+      document.write(product);
+    </script>
+
+    <h1>1. lenght()-</h1>
+    <script>
+      var product = ["Apple", "Banana"];
+      n = product.length;
+      document.write(n);
+    </script>
+
+    <h1>1. index of()-</h1>
+    <script>
+      var product = ["Apple", "Banana"];
+      document.write(product.indexOf("Apple"));
+    </script>
+
+    <h1>1.includes()-</h1>
+    <script>
+      var product = ["Apple", "Banana", "Mango"];
+      console.log(product.includes("Banana"));
+      // true
+      console.log(product.includes("Orange"));
+    </script>
+
+    <h1>1.join()-</h1>
+    <script>
+      let product = ["Apple", "Banana", "Mango"];
+      console.log(product.join(", ")); // "Apple, Banana, Mango"
+    </script>
+  </body>
 </html>
